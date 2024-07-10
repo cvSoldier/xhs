@@ -1,4 +1,4 @@
-FROM --platform=$TARGETPLATFORM mcr.microsoft.com/playwright/python:v1.38.0-jammy
+FROM --platform=$TARGETPLATFORM mcr.microsoft.com/playwright/python:v1.44.0-jammy
 
 LABEL authors="ReaJason"
 LABEL mail="reajason1225@gmail.com"
@@ -16,7 +16,8 @@ RUN python -m pip install --upgrade pip \
     && pip install Flask gevent xhs playwright \
     && rm -rf /var/lib/apt/lists/*ç
 
-RUN curl --insecure -L -o stealth.min.js  https://cdn.jsdelivr.net/gh/requireCool/stealth.min.js/stealth.min.js
+RUN curl --insecure -L -o stealth.min.js  https://github.com/berstend/puppeteer-extra/blob/stealth-js/stealth.min.js
+# RUN curl --insecure -L -o stealth.min.js  https://cdn.jsdelivr.net/gh/requireCool/stealth.min.js/stealth.min.js
 
 EXPOSE 5005
 
